@@ -1,0 +1,29 @@
+section.section.intro
+    .intro__autorization
+        a.intro__autorization-link(href='') Авторизироваться
+    .intro__content
+        include ../common/info.pug
+        ul.intro__social-list
+            li.intro__social-item
+                a.intro__social-link(href='')
+                    svg.intro__social-icon
+                        use(xlink:href='../../assets/images/sprite.svg#vk')                                                         
+            li.intro__social-item
+                a.intro__social-link(href='')
+                    svg.intro__social-icon
+                        use(xlink:href='../../assets/images/sprite.svg#github')
+            li.intro__social-item
+                a.intro__social-link(href='')
+                    svg.intro__social-icon
+                        use(xlink:href='../../assets/images/sprite.svg#in')     
+        ul.intro__menu-list
+            li.intro__menu-item
+                a.intro__menu-link(href="my-works.html") Мои работы
+            li.intro__menu-item
+                a.intro__menu-link(href="about.html") Обо мне
+            li.intro__menu-item
+                a.intro__menu-link(href="blog.html") Блог
+
+
+    .intro__copyright
+        include ../common/copyright.pug

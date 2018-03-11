@@ -7,24 +7,46 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Главная</h1>
-    <form>
-      <label for="email">email</label>
-      <input name="email" id="email">
-      <label for="password">password</label>
-      <input name="password" id="password">
-      <button>Войти</button>
-    </form>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
+    <div class="wrapper">
+      <div class="maincontent">
+        <section class="section intro">
+          <div class="intro__autorization"><a class="intro__autorization-link" href="">Авторизироваться</a></div>
+          <div class="intro__content">
+            <div class="info">
+              <div class="info__foto"><img class="info__foto-img" src="../../assets/images/foto.jpg"></div>
+              <div class="info__name">Владимир Астахов</div>
+              <div class="info__text">Личный сайт веб разработчика</div>
+            </div>
+            <ul class="intro__social-list">
+              <li class="intro__social-item"><a class="intro__social-link" href="">
+                  <svg class="intro__social-icon">
+                    <use xlink:href="../../assets/images/sprite.svg#vk">                                                        </use>
+                  </svg></a></li>
+              <li class="intro__social-item"><a class="intro__social-link" href="">
+                  <svg class="intro__social-icon">
+                    <use xlink:href="../../assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="intro__social-item"><a class="intro__social-link" href="">
+                  <svg class="intro__social-icon">
+                    <use xlink:href="../../assets/images/sprite.svg#in">    </use>
+                  </svg></a></li>
+            </ul>
+            <ul class="intro__menu-list">
+              <li class="intro__menu-item"><a class="intro__menu-link" href="my-works.html">Мои работы</a></li>
+              <li class="intro__menu-item"><a class="intro__menu-link" href="about.html">Обо мне</a></li>
+              <li class="intro__menu-item"><a class="intro__menu-link" href="blog.html">Блог</a></li>
+            </ul>
+          </div>
+          <div class="intro__copyright">
+            <p class="copyright__text">&copy Владимир Астахов | Создано с любовью в LoftSchool | 2016</p>
+          </div>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

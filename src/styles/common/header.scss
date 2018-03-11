@@ -1,0 +1,147 @@
+
+.general{
+    background-image: url('../../assets/images/background/header__background.jpg');
+    background-size: cover;
+    flex-direction: column;
+    justify-content: baseline;
+    color: white;
+    position: relative;
+}
+
+
+.header{
+    
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    background-size: cover;
+    color: white;
+    margin-top: 20px;
+
+
+   
+        
+
+    
+       
+
+
+    
+}
+
+
+.header__list{
+    display: flex;
+    justify-content: left;
+    width: 138px;
+    height: 23px;
+
+    .header__item{
+        width: 33%;
+        height: 100%;
+
+        .header__item-link{
+            width: 35px;
+            height: 22px;
+            color: white;
+
+            .header__item-icon{
+                width: 100%;
+                height: 100%;
+                fill: white;
+                
+                &:hover{
+                    fill: $green;
+                }
+
+                
+            }
+        }
+
+    }
+    
+}
+
+.header__hamburger-menu{
+    width: 40px;
+    height: 36px;
+    color:  white;
+
+    .header__hamburger-icon{
+        fill: $white;
+        height: 100%;
+        width: 100%;
+
+    }
+
+}
+
+
+.content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+    flex-direction: column;
+    position: relative;
+
+}
+
+
+.info{
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+            .info__foto{
+                width: 141px;
+                height: 141px;
+                overflow: hidden;
+                position: relative;
+                border-radius: 50%;
+    
+                .info__foto-img{
+                    height: 309%;
+                    position: relative;
+                    left: -150px;
+                    
+                    transform: scale(-1, 1)
+                }
+            }
+
+            .info__name{
+                margin-top: 20px;
+                font-weight: 700;
+                font-size: 35px;
+                
+
+            }
+
+            .info__text{
+                font-weight: 400;
+                font-size: 16px;
+                margin-top: 7px;
+                
+            }
+}
+        
+
+.scroll{
+    width: 26px;
+    height: 16px;   
+    color: white;
+    position: absolute;
+    bottom: 50px;
+
+    .scroll__icon{
+        fill: $white;
+        width: 100%;
+        height: 100%;
+    }
+
+}

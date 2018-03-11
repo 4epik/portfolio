@@ -1,0 +1,137 @@
+.intro{
+    background-image: url('../../assets/images/background/header__background.jpg');
+    background-size: cover;
+    flex-direction: column;
+    justify-content: baseline;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro__content{
+    width: 380px;
+    height: 396px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba( 18, 38, 32, 0.6 );
+   position: relative;
+  
+    align-items: center;
+    justify-content: center;
+}
+
+
+.intro__menu-list{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 44px;
+    background-color: $menu;
+    display: flex;
+    justify-content: space-between; 
+
+    .intro__menu-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        position: relative;
+
+
+        &:before{
+                     
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            content: ' ';
+            @include line(1px, 44px, $white);
+             
+        }
+
+        &:first-child:before{
+            display: none;
+        }
+
+        .intro__menu-link{
+            display: block;
+            color:white;
+            font-size: 16px;
+            font-weight: 500;
+
+           
+        }
+
+        &:hover{
+            background-color: $menuactive;
+        }
+    }
+}
+
+
+.intro__autorization{
+    width: 180px;
+    height: 44px;
+    border-radius: 30px;
+    border: solid 2px  $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    
+    &:hover{
+        background-color: $green;
+        border-color: $lightgreen;
+    }
+
+
+    .intro__autorization-link{
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+
+
+
+.intro__social-list{
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .intro__social-item{
+        width: 32px;
+        height: 27px;
+        margin: 0px 11px 0px 11px;
+
+        .intro__social-link{
+            display: block;
+            height: 22px;
+
+            .intro__social-icon{
+                fill: $lightgrey;
+                height: 100%;
+                width: 100%;
+
+                &:hover{
+                    fill: $green;
+                }
+
+            }
+        }
+    }
+}
+
+.intro__copyright{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}

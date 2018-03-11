@@ -1,0 +1,20 @@
+footer.footer
+    .content.footer__content
+        ul.footer__list
+            li.footer__item Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftShool.
+            li.footer__item
+                ul.menu__list
+                    li.menu__item
+                        a.menu__item-link(href='my-works.html') Мои работы
+                    li.menu__item
+                        a.menu__item-link(href='about.html') Обо мне
+                    li.menu__item
+                        a.menu__item-link(href='blog.html') Блог
+                    li.menu__item
+                        a.menu__item-link(href='') Авторизация
+
+                include ./footer_social.pug                         
+
+            li.footer__item Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете. — Martin Golding
+    .copyright 
+        include ./copyright.pug

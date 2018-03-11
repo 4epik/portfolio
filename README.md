@@ -1,10 +1,17 @@
-## Gulp-webpack 2018
+Выполнил: Ушакова Наталья
 
-#### Для работы сборки у вас должны быть установлены
-* npm 5
-* gulp-cli
+Дополнительно к сборке установлены:
+- Linting для javascript и css.
+- Babel
+- Plumber
+- Autoprefixer
+- Генератор svg спрайтов
 
-#### Как установить проект
-1. clone this repo
-2. npm i
-3. gulp
+Для работы  сборки необходимо:
+- npm 5
+- gulp-cli
+
+Установка проекта
+- clone this repo
+- npm i
+- gulp
