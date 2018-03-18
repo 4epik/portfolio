@@ -1,0 +1,42 @@
+
+
+@function rem($px) {
+    @return $px/14px+0rem;
+}
+
+
+
+@mixin desk{
+    @media screen and (max-width: $desk){
+        @content;
+    }
+}
+
+
+
+
+@mixin notebook{
+    @media screen and (max-width: $notebook){
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: $tablet){
+        @content;
+    }
+}
+
+
+@mixin phone{
+    @media screen and (max-width: $phone){
+        @content;
+    }
+}
+
+@mixin phone_mini{
+    @media screen and (max-width: $phone_mini){
+        @content;
+    }
+}

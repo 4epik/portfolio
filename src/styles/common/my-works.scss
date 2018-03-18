@@ -1,0 +1,256 @@
+.hero{
+    background: url('../../assets/images/background/forest.jpg') 0 0 no-repeat;
+    background-size: cover;
+    color: $white;
+}
+
+.hero__title-img{
+    width: 100%;
+    height: 90%;
+    padding: 3%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero__title-icon{
+    width: 100%;
+    height: 100%;
+    fill: $white;
+    opacity: 0.12;
+
+}
+
+.container__hero{
+    
+
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+
+
+}
+
+.header__icon{
+    fill: $white;
+
+    &:hover{
+        fill: $green;
+    }
+}
+
+
+.section__works{
+    position: relative;
+    flex-direction: column;
+
+   
+}
+
+.works__title{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include tablet{
+        height: 10%;
+    }
+}
+
+.works__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 80%;
+
+    @include tablet{
+        height: 90%;
+    }
+
+}
+
+.works__content{
+    //width: 50%;
+    height: 100%;
+    background-color: $left-container;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works__left-content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet{
+        width: 100%;
+    }
+
+}
+
+.wirks__left-title{
+
+    @include tablet{
+        font-size: 30px;
+        
+
+        &:before{
+            margin-top: 18px;
+        }
+    }
+}
+
+.works__left-text{
+    color: $green;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 27px;
+
+
+    @include tablet{
+        margin-top: 18px;
+
+    }
+
+}
+
+.works__button{
+    background-color: $button;
+    margin-top: 58px;
+    width: 200px;
+    height: 45px;
+
+    @include tablet{
+        margin-top: 35px;
+    }
+}
+
+.works__button-link{
+    color: white;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.works__button-img{
+    fill: $white;
+    height: 100%;
+    width: 22px;
+}
+
+.works__button-icon{
+    width: 100%;
+    height: 100%;
+
+}
+
+.works__button-text{
+    color: $white;
+    font-weight: 500;
+    margin-left: 12px;
+}
+
+.works__right{
+    width: 50%;
+    height: 100%;
+    background-color: $right-container;
+}
+
+
+.works__container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 25% 25% 25% 25%;
+
+    @include tablet{
+        grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include phone{
+        grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+.works__content{
+    grid-column-start: 1; 
+    grid-column-end: 2; 
+    grid-row-start: 1; 
+    grid-row-end: 5; 
+
+    @include tablet{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 4; 
+        grid-row-end: 6; 
+    }
+
+    @include phone{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 3; 
+        grid-row-end: 5; 
+    }
+}
+
+
+.works__slider{
+    grid-column-start: 2; 
+    grid-column-end: 3; 
+    grid-row-start: 1; 
+    grid-row-end: 4; 
+
+    @include tablet{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 1; 
+        grid-row-end: 4; 
+    }
+
+    @include phone{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 1; 
+        grid-row-end: 3; 
+    }
+}
+
+
+.works__slider-control{
+    grid-column-start: 2; 
+    grid-column-end: 3; 
+    grid-row-start: 4; 
+    grid-row-end: 5; 
+
+    @include tablet{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 6; 
+        grid-row-end: 8; 
+    }
+
+    @include phone{
+        grid-column-start: 1; 
+        grid-column-end: 3; 
+        grid-row-start: 5; 
+        grid-row-end: 6; 
+    }
+}
+
+

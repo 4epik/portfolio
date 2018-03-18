@@ -1,78 +1,100 @@
-#slides{
-    position: relative;
-    height: 300px;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-}
-.slide{
-    position: absolute;
-    left: 0px;
-    top: 0px;
+.slider{
     width: 100%;
     height: 100%;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 1s;
-}
-.showing{
-    opacity: 1;
-    z-index: 2;
-}
-.controls{
-    display: none;
+    display: flex;
+    flex-direction: column;
+
+
+
 }
 
-.slide{
-    font-size: 40px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #333;
-    color: #fff;
-    background-size: cover;
+.slider__list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
 }
 
-/* http://unrestrictedstock.com/wp-content/uploads/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg */
-.slide:nth-of-type(1){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg');
+.slider__item{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+
 }
 
-/* http://www.dawghousedesignstudio.com/wp-content/uploads/2010/01/25/free-stock-photos-1.jpg */
-.slide:nth-of-type(2){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/free-stock-photos-1.jpg');
+.slider__item-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position-x: center;
+
 }
 
-/* http://www.stockfreeimages.com/static/homepage/waterfall-free-stock-photo-244915.jpg */
-.slide:nth-of-type(3){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/waterfall-free-stock-photo-244915.jpg');
+.slider__item-img{
+    width: 95%;
+    
+
 }
 
-.controls{
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 20px 0px;
-    font-size: 20px;
-    cursor: pointer;
-    border: 2px solid #fff;
-    margin: 10px 0px 0px 10px;
-    width: 70px;
+.slider__control{
+    width: 100%;
+    height: 100%;
+    //height: 40%;
+    display: flex;
+    flex-direction: row;
+
 }
 
-.controls:hover,
-.controls:focus{
-    background: #eee;
-    color: #333;
-}
-
-.container{
+.slider__control-item{
+    background: url('../../assets/images/slider/down.jpg') 0 0 no-repeat;
+    width: 50%;
+    height: 100;
     position: relative;
+    background-size: cover;
+    background-position-x: center;
+
+    &:last-child{
+        background-image: url('../../assets/images/slider/up.jpg');
+    }
 }
 
-.buttons{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 10;
-    font-size: 0px;
+.slider__control-down{
+  
+    background-color: rgba(175,179,171,0.5);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position-x: center;
 }
+
+.slider__control-up{
+   
+   background-color: rgba(175,179,171,0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position-x: center;
+}
+
+.slider__control-pic{
+    width: 42px;
+    height: 44px;
+    
+}
+
+
+.slider__control-icon{
+    fill: $white;
+    
+    
+}
+
+
+

@@ -4,4 +4,45 @@ block variables
     - var title = 'Добро пожаловать'
 
 block content
-    include ../section/intro.pug
+  section.section.intro
+      .container.intro__container
+        
+        .button.intro__button
+          a.button-link.intro__button-link(href="login.html") Авторизироваться
+        .intro__content
+          .user.user__intro
+            .user__content
+              .user__pic
+                img.user__pic-img(src="../../assets/images/foto.jpg", alt="avatar") 
+              .user__description
+                .user__name Владимир Астахов
+                .user__info Личный сайт разработчика
+            .social.intro__socials
+              ul.social__list
+                li.social__item
+                  a.social__link(href="#")
+                    svg.social__icon.intro__icon
+                      use(xlink:href='../../assets/images/sprite.svg#vk')
+                li.social__item
+                  a.social__link(href="#")
+                    svg.social__icon.intro__icon
+                      use(xlink:href='../../assets/images/sprite.svg#github') 
+                li.social__item
+                  a.social__link(href="#")
+                    svg.social__icon.intro__icon
+                      use(xlink:href='../../assets/images/sprite.svg#in')
+          .nav.intro__nav
+            ul.nav__list
+              -
+                var navs = [
+                  ['my-works.html', 'Мои работы'],
+                  ['about.html', 'Обо мне'],
+                  ['blog.html', 'Блог'],
+                ]
+              each nav in navs
+                li.nav__item.intro__nav-item
+                  a.nav__link.intro__nav-link(href=`${nav[0]}`) #{nav[1]}
+
+                           
+        .copyright.intro__copyright
+          p.copyright__text &copy Владимир Астахов | Создано с любовью в LoftSchool | 2016

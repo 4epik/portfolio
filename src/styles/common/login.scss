@@ -1,0 +1,234 @@
+.login__section{
+    background: url('../../assets/images/background/forest.jpg') 0 0 no-repeat;
+    background-size: cover;
+    color: $white;
+}
+
+.login__form{
+    
+    
+    background-color: rgba(18, 38, 32, 0.6);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__form-title{
+    color: $white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    font-size: 35px;
+    &:after{
+        
+         content: ' ';
+         @include line(90px, 3px, $white);
+         
+ 
+     }
+
+}
+
+.login__form-content{
+    width: 90%;
+
+}
+
+.login__label{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+.login__name{
+    width: 100%;
+    height: 45px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    background-color: #f0efe9;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.login__input{
+    height: 100%;
+    width: 90%;
+    border: none;
+    padding-left: 10px;
+    color: #c5c6c7;
+}
+
+.login__img{
+    width: 20%;
+    height: 60%;
+
+}
+
+
+
+
+.login__checkbox{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.login__checkbox-input{
+    display: none;
+}
+
+.login__checkbox-label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.78571rem;
+    margin-right: 1.07143rem;
+    margin-left: 0.35714rem;
+    margin-top: 0.35714rem;
+    color: $white;
+
+        &:before{
+            content: ' ';
+            background-color: $white;
+            background-image: url('../../assets/images/sprite.svg#check');
+            background-size: cover;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            position: absolute;
+            left: 0;
+        
+            
+
+
+        }
+
+       
+}
+
+.login__checkbox-input:checked+.login__checkbox-label:before{
+    background-color: $menu;
+}
+
+.login__radio{
+    margin-top: 20px;
+}
+
+.login__radio-title{
+    font-weight: 700;
+}
+
+.login__radio-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.login__radio-item{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+
+}
+
+.login__radio-input{
+    display: none;
+}
+
+.login__radio-label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.78571rem;
+    margin-right: 1.07143rem;
+    margin-left: 0.35714rem;
+    margin-top: 0.35714rem;
+    color: $white;
+
+        &:before{
+            content: ' ';
+            background-color: $white;
+            border: 6px solid $white;
+            border-radius: 50%;
+            background-size: cover;
+            display: block;
+            width: 8px;
+            height: 8px;
+            
+            position: absolute;
+            left: 0;
+        
+            
+
+
+        }
+
+       
+}
+
+.login__radio-input:checked+.login__radio-label{
+    color: $menu;
+}
+
+.login__radio-input:checked+.login__radio-label:before{
+    background-color: $menu;
+}
+
+
+
+
+.login__nav{
+    
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    background-color: $menu;
+    display: flex;
+    justify-content: space-between; 
+
+}
+
+.login__nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 2px solid white;
+
+   
+
+    &:first-child{
+        border-left: 2px solid transparent;
+    }
+
+    .login__nav-link{
+        display: block;
+        color:white;
+        font-size: 16px;
+        font-weight: 500;
+
+       
+    }
+
+    &:hover{
+        background-color: $menuactive;
+    }
+}

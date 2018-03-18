@@ -1,0 +1,47 @@
+.user{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+
+}
+
+.user__content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__pic{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.user__pic-img{
+    height: 309%;
+    position: relative;
+    left: -150px;
+    transform: scale(-1, 1)
+}
+
+.user__name{
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 35px;
+    
+
+}
+
+.user__info{
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 7px;
+    
+}

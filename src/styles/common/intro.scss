@@ -1,133 +1,112 @@
 .intro{
-    background-image: url('../../assets/images/background/header__background.jpg');
+    background: url('../../assets/images/background/forest.jpg') 0 0 no-repeat;
     background-size: cover;
-    flex-direction: column;
-    justify-content: baseline;
-    color: white;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: $white;
+
 }
 
-.intro__content{
-    width: 380px;
-    height: 396px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba( 18, 38, 32, 0.6 );
-   position: relative;
-  
-    align-items: center;
-    justify-content: center;
-}
+.intro__container{
 
-
-.intro__menu-list{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 44px;
-    background-color: $menu;
-    display: flex;
-    justify-content: space-between; 
-
-    .intro__menu-item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 33%;
-        position: relative;
-
-
-        &:before{
-                     
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            content: ' ';
-            @include line(1px, 44px, $white);
-             
-        }
-
-        &:first-child:before{
-            display: none;
-        }
-
-        .intro__menu-link{
-            display: block;
-            color:white;
-            font-size: 16px;
-            font-weight: 500;
-
-           
-        }
-
-        &:hover{
-            background-color: $menuactive;
-        }
+    @include phone{
+        justify-content: baseline;
     }
 }
 
-
-.intro__autorization{
-    width: 180px;
-    height: 44px;
-    border-radius: 30px;
-    border: solid 2px  $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.intro__button{
     position: absolute;
     top: 16px;
     right: 20px;
+
+    @include phone{
+        margin-top: 30px;
+        position: static;
+    }
     
     &:hover{
         background-color: $green;
         border-color: $lightgreen;
     }
 
+}
 
-    .intro__autorization-link{
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
+.intro__content{
+    
+    
+    background-color: rgba(18, 38, 32, 0.6);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include phone{
+        margin-top: 40px;
+        position: static;
     }
 }
 
 
+.user__intro{
+    padding: 40px 30px 15px 30px;
+}
+.intro__icon{
+    fill: $intro_icon;
+    
 
+    &:hover{
+        fill: $green;
+    }
+}
 
-.intro__social-list{
-    margin-top: 30px;
-    padding-bottom: 30px;
+.intro__nav{
+    
+    bottom: 0;
+    width: 100%;
+    
+    background-color: $menu;
+    display: flex;
+    justify-content: space-between; 
+
+}
+
+.intro__nav-item{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 33%;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 2px solid white;
 
-    .intro__social-item{
-        width: 32px;
-        height: 27px;
-        margin: 0px 11px 0px 11px;
+   
 
-        .intro__social-link{
-            display: block;
-            height: 22px;
+    &:first-child{
+        border-left: 2px solid transparent;
+    }
 
-            .intro__social-icon{
-                fill: $lightgrey;
-                height: 100%;
-                width: 100%;
+    .intro__nav-link{
+        display: block;
+        color:white;
+        font-size: 16px;
+        font-weight: 500;
 
-                &:hover{
-                    fill: $green;
-                }
+       
+    }
 
-            }
-        }
+    &:hover{
+        background-color: $menuactive;
     }
 }
+
+
+
+
+
+
+
 
 .intro__copyright{
     position: absolute;
@@ -135,3 +114,10 @@
     left: 0;
     right: 0;
 }
+
+
+
+
+
+
+  
