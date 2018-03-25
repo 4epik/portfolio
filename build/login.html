@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <script src="/assets/scripts/bundle.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="section login__section">
+        <div class="container">
+          <form class="login__form" action="">
+            <h1 class="login__form-title">авторизируйтесь</h1>
+            <div class="login__form-content">
+              <div class="login__name">
+                <label class="login__label" for="login"></label>
+                <input class="login__input" type="text" name="login" id="login" value="Логин"><span class="login__img">
+                  <svg class="title-icon">
+                    <use xlink:href="../../assets/images/sprite.svg#login">   </use>
+                  </svg></span>
+              </div>
+              <div class="login__name">
+                <label class="login__label" for="pass"></label>
+                <input class="login__input" type="password" name="pass" id="pass" value="Пароль"><span class="login__img">
+                  <svg class="title-icon">
+                    <use xlink:href="../../assets/images/sprite.svg#password">                           </use>
+                  </svg></span>
+              </div>
+              <div class="login__checkbox">
+                <input class="login__checkbox-input visually-hidden" type="checkbox" name="checkbox" id="checkbox">
+                <label class="login__checkbox-label" for="checkbox">Я человек</label>
+              </div>
+              <div class="login__radio">
+                <div class="login__radio-title">Вы точно не робот?</div>
+                <ul class="login__radio-list">   
+                  <li class="login__radio-item">
+                    <input class="login__radio-input visually-hidden" type="radio" name="robot" id="radio1">
+                    <label class="login__radio-label" for="radio1">Да</label>
+                  </li>
+                  <li class="login__radio-item">
+                    <input class="login__radio-input visually-hidden" type="radio" name="robot" id="radio2">
+                    <label class="login__radio-label" for="radio2">Не уверен</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav login__nav">
+              <ul class="nav__list">
+                <li class="nav__item login__nav-item"><a class="nav__link login__nav-link" href="index.html">На главную              </a></li>
+                <li class="nav__item login__nav-item"><a class="nav__link login__nav-link" href="#">Войти              </a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <div class="copyright intro__copyright">
+          <p class="copyright__text">&copy Владимир Астахов | Создано с любовью в LoftSchool | 2016</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
