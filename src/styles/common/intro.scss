@@ -16,52 +16,111 @@
     position: absolute;
     top: 16px;
     right: 20px;
+    opacity: 1;
 
     @include phone{
         margin-top: 30px;
         position: static;
     }
-    
+} 
+
+
+.login-button{
+    opacity: 0;
+}
+
+
+ .intro__button-link{
     &:hover{
+        background-color: $green;
+        border-color: $lightgreen;
+    }
+
+    &:focus{
         background-color: $green;
         border-color: $lightgreen;
     }
 
 }
 
+
+
+
+
+.flip-container{
+    width: 380px;
+    height: 390px;
+    position: relative;
+    perspective: 1000;
+
+    @include phone{
+        margin-top: 40px;
+       
+    }
+    
+}
+
+.flipper-active {
+    transform: rotateY(180deg);
+    }
+
+
+.flipper {
+
+    height: 100%;
+    width: 100%;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+
+
+}
+
+.intro__content, .login__form {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro__content {
+    z-index: 2;
+    }
+
+
+
 .intro__content{
     
-    
+    width: 100%;
+    height: 100%;
+
     background-color: rgba(18, 38, 32, 0.6);
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    @include phone{
-        margin-top: 40px;
-        position: static;
-    }
+   
 }
 
 
 .user__intro{
-    padding: 40px 30px 15px 30px;
+    padding: 0px 30px 39px 30px;
 }
 .intro__icon{
     fill: $intro_icon;
     
 
-    &:hover{
+    &:hover, :focus{
         fill: $green;
     }
 }
 
 .intro__nav{
-    
+    position: absolute;
     bottom: 0;
     width: 100%;
     
@@ -96,7 +155,7 @@
        
     }
 
-    &:hover{
+    &:hover, :focus{
         background-color: $menuactive;
     }
 }

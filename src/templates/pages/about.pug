@@ -6,26 +6,10 @@ block variables
 block content
    
     section.section.hero
-        .container.container__hero
+        .container.container_hero
             header.header
-                .social.header__socials
-                    ul.social__list
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#vk')
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#github') 
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#in') 
-                .hamburger
-                    a.hamburger__link(href='#')
-                        svg.hamburger__icon
-                            use(xlink:href='../../assets/images/sprite.svg#hamburger')
+                include ../common/header_social.pug
+                include ../common/hamburger.pug
             .hero__title
                 .hero__title-img
                     svg.hero__title-icon
@@ -37,11 +21,11 @@ block content
                         .user__name Владимир Астахов
                         .user__info Личный сайт разработчика
             .scroll
-                a.scroll__link(href="#")
+                button.scroll__link(type="button")
                     svg.scroll__icon
                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
 
-    section.section.section__about
+    section.section.section_about
         .triangle-left.about__triangle-left
             
         .triangle-right.about__triangle-right   
@@ -128,10 +112,9 @@ block content
                                                     svg.skill__circle(viewBox='0 0 110 110')
                                                         circle.skill__circle-first(r="45" cx="50%" cy="50%" fill="none")
                                                         circle(class='skill__circle-second '+`${circle[1]}` r="45" cx="50%" cy="50%" fill="none" transform="rotate(-90 55 55)")
-    section.section.section__map
-        .google-map
-            script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    section.section.section_map
+        .google-map(id='map')
+           
         .container.contact__container
             .contact
                 .contact__title
@@ -151,6 +134,4 @@ block content
                                     svg.contact__item-icon  
                                         use(xlink:href=`${contact[0]}`)
                                 .contact__item-text #{contact[1]}
-        
-
-        include ../common/footer.pug
+        include ../common/footer.pug   

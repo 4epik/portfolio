@@ -47,45 +47,99 @@
 
 }
 
-.slider__control-item{
-    background: url('../../assets/images/slider/down.jpg') 0 0 no-repeat;
-    width: 50%;
-    height: 100;
-    position: relative;
-    background-size: cover;
-    background-position-x: center;
-
-    &:last-child{
-        background-image: url('../../assets/images/slider/up.jpg');
-    }
+.works__slider-control{
+    display: flex;
+    
 }
+//.slider__control-list{
+   // background: url('../../assets/images/slider/down.jpg') 0 0 no-repeat;
+   // width: 50%;
+    //height: 100;
+    //position: relative;
+    //background-size: cover;
+    //background-position-x: center;
 
-.slider__control-down{
+    //&:last-child{
+       // background-image: url('../../assets/images/slider/up.jpg');
+    //}
+//}
+
+.slider__control-left{
+    // background: url('../../assets/images/slider/down.jpg') 0 0 no-repeat;
+     width: 100%;
+     height: 100;
+     position: relative;
+     background-size: cover;
+     background-position-x: center;
+     overflow: hidden;
+ 
+     
+ }
+
+ .slider__control-right{
+    // background: url('../../assets/images/slider/down.jpg') 0 0 no-repeat;
+     width: 100%;
+     height: 100;
+     position: relative;
+     background-size: cover;
+     background-position-x: center;
+     overflow: hidden;
+
+     .slider__control-list{
+         .slider__controll-item{
+             top: 100%;
+         }
+     }
+ 
+    
+ }
+
+.slider__control-list{
   
     background-color: rgba(175,179,171,0.5);
     background-size: cover;
     width: 100%;
     height: 100%;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
     background-position-x: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
-.slider__control-up{
-   
-   background-color: rgba(175,179,171,0.5);
+
+
+.slider__control-item{
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position-x: center;
+    position: absolute;
+    top:-100%;
+
+    
 }
 
-.slider__control-pic{
+.active{
+    top:0;
+}
+
+
+
+.slider__control-img{
+    height: 100%;
+    width: 100%;
+}
+
+.slider__controls-down, .slider__controls-up{
     width: 42px;
     height: 44px;
+    position: absolute;
+    top: 46%;
+    left: 42%;
     
 }
 

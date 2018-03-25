@@ -1,6 +1,6 @@
 .social{
-    width: 142px;
-    margin-top: 24px;
+    width: 163px;
+    margin-top: 36px;
 }
 .social__list{
     display: flex;
@@ -28,7 +28,7 @@
     height: 100%;
     width: 100%;
 
-    &:hover{
+    &:hover, :focus{
         fill: $white;
     }
 

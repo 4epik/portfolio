@@ -49,11 +49,15 @@ body{
     width: 100%;
     height: 100%;
 
-    //min-height: 650px;
+    min-height: 650px;
     display: flex;
     //align-items: center;
     justify-content: center;
     //flex-direction: column;
+
+    @include tablet{
+        height: auto;
+    }
 }
 
 .container{
@@ -64,6 +68,14 @@ body{
     justify-content: center;
     position: relative;
     flex-direction: column;
+
+    @include tablet{
+        height: auto;
+    }
+
+    @include phone{
+        height: auto;
+    }
     
 }
 
@@ -81,11 +93,21 @@ h1{
 
     &:after{
        display: block;     
-       margin-top: 32px;
+       margin-top: 15px;
         content: ' ';
         @include line(90px, 3px, $title);
         
 
+    }
+
+    @include tablet{
+       
+        font-size: 50px;
+       
+    }
+
+    @include phone{
+        font-size: 40px;
     }
 }
 
@@ -102,11 +124,21 @@ h2{
 
     &:after{
         display: block;     
-        margin-top: 30px;
+        margin-top: 20px;
          content: ' ';
          @include line(90px, 3px, $title_two);
          
  
+     }
+
+     @include tablet{
+        
+         font-size: 30px;
+        
+     }
+ 
+     @include phone{
+         font-size: 20px;
      }
 
     
@@ -122,6 +154,14 @@ ul{
      text-decoration: none;
      display: block;
  }
+
+
+button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
 
  p{
      padding: 0;
@@ -162,6 +202,8 @@ ul{
 @import 'common/title-img';
 @import 'common/slider';
 @import 'common/user';
+@import 'common/map';
+
 
 
 @import 'common/intro';

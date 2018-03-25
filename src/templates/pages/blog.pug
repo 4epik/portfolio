@@ -8,24 +8,9 @@ block content
     section.section.hero
         .container
             header.header
-                .social.header__socials
-                    ul.social__list
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#vk')
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#github') 
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#in') 
-                .hamburger
-                    a.hamburger__link
-                        svg.hamburger__icon
-                            use(xlink:href='../../assets/images/sprite.svg#hamburger')
+                include ../common/header_social.pug
+                include ../common/hamburger.pug
+  
             .hero__title
                 .hero__title-img
                     svg.hero__title-icon
@@ -38,7 +23,7 @@ block content
                             h1.user__title блог
                         .user__info.blog__user-info Статьи которые я написал
             .scroll
-                a.scroll__link(href="#")
+                button.scroll__link(type="button")
                     svg.scroll__icon
                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
 
@@ -47,7 +32,7 @@ block content
             
         .triangle-right.works__triangle-right   
         .container.blog__container
-            .content__left
+            aside.content__left
                 ul.sidebar__list
                     li.sidebar__item
                         a.sidebar__item-link(href="#") Самое важное в SASS
@@ -57,9 +42,9 @@ block content
                         a.sidebar__item-link(href="#") Необходимый набор Gulp плагинов
                     li.sidebar__item
                         a.sidebar__item-link(href="#") Почему я выбрал Jade
-            .content__right
-                ul.blog__list
-                    li.blog__item
+            main.content__right
+                .blog
+                    article.blog__item
                         h2.blog__title Самове важное в SASS
                         .blog__time 22 ноября 2016
                         .blog__content
@@ -67,7 +52,7 @@ block content
                             .blog__img
                                 img.blog__img-pic(src='../../assets/images/code.jpg' alt='code')
                                                                                               
-                    li.blog__item
+                    article.blog__item
                         h2.blog__title Самове важное в SASS
                         .blog__time 22 ноября 2016
                         .blog__content

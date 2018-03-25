@@ -9,6 +9,10 @@
 .scroll__link{
     width: 26px;
     height: 17px;
+    padding: 0;
+    background: none;
+    border: none;
+
 
 }
 
@@ -23,7 +27,7 @@
     height: 100%;
     fill: $white;
 
-    &:hover{
+    &:hover, :focus{
         fill: $green;
     }
 }

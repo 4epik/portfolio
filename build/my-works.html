@@ -9,12 +9,12 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
-    <script src="/assets/scripts/bundle.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <section class="section hero">
-        <div class="container container__hero">
+        <div class="container container_hero">
           <header class="header">
             <div class="social header__socials">
               <ul class="social__list">
@@ -32,10 +32,19 @@
                     </svg></a></li>
               </ul>
             </div>
-            <div class="hamburger"><a class="hamburger__link" href="#">
-                <svg class="hamburger__icon">
-                  <use xlink:href="../../assets/images/sprite.svg#hamburger"></use>
-                </svg></a></div>
+            <div class="hamburger"> 
+              <button class="hamburger_link" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></button>
+              <div class="overlay" id="overlay">
+                <div class="overlay__menu">
+                  <ul class="overlay__list">
+                    <li class="overlay__item"><a class="overlay__item-link" href="my-works.html">Мои работы</a></li>
+                    <li class="overlay__item"><a class="overlay__item-link" href="blog.html">Блог</a></li>
+                    <li class="overlay__item"><a class="overlay__item-link" href="about.html">обо мне</a></li>
+                    <li class="overlay__item"><a class="overlay__item-link" href="index.html">Авторизация</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </header>
           <div class="hero__title">
             <div class="title-img hero__title-img">
@@ -51,13 +60,16 @@
               </div>
             </div>
           </div>
-          <div class="scroll"><a class="scroll__link" href="#">
+          <div class="scroll">
+            <button class="scroll__link" type="button">
               <svg class="scroll__icon">
                 <use xlink:href="../../assets/images/sprite.svg#arrow_down"></use>
-              </svg></a></div>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
-      <section class="section section__works">
+      <section class="section section_works">
         <div class="triangle-left works__triangle-left"></div>
         <div class="triangle-right works__triangle-right">               </div>
         <div class="works__title">
@@ -89,38 +101,51 @@
             </div>
           </div>
           <div class="works__slider-control">
-            <ul class="slider__control">
-              <li class="slider__control-item">
-                <div class="slider__control-down"><a class="slider__control-pic" href="#">
+            <div class="slider__control first">
+              <div class="slider__control-left">
+                <ul class="slider__control-list">
+                  <li class="slider__control-item active"><img class="slider__control-img" src="./../assets/images/slider/down.jpg"></li>
+                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/slide1.png"></li>
+                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/up.jpg"></li>
+                </ul>
+                <div class="slider__controls"><a class="slider__controls-down" href="#" id="slider">
                     <svg class="slider__control-icon">
                       <use xlink:href="../../assets/images/sprite.svg#arrow_down"></use>
                     </svg></a></div>
-              </li>
-              <li class="slider__control-item">
-                <div class="slider__control-up"><a class="slider__control-pic" href="#">
+              </div>
+            </div>
+            <div class="slider__control opposite">                   
+              <div class="slider__control-right">
+                <ul class="slider__control-list">
+                  <li class="slider__control-item active"><img class="slider__control-img" src="./../assets/images/slider/down.jpg"></li>
+                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/slide1.png"></li>
+                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/up.jpg"></li>
+                </ul>
+                <div class="slider__controls"><a class="slider__controls-down" href="#" id="slider">
                     <svg class="slider__control-icon">
                       <use xlink:href="../../assets/images/sprite.svg#arrow_down">                                       </use>
                     </svg></a></div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section section__comment">
-        <div class="container comment__container">
+      <section class="section section_comment">
+        <div class="section__background"><img class="background-img" src="../../assets/images/background/my-works.jpg"></div>
+        <div class="container comment_container">
           <div class="comment__title-content">
             <div class="title-img comment__title-img">
               <svg class="title-icon">
                 <use xlink:href="../../assets/images/sprite.svg#about_header"></use>
               </svg>
             </div>
-            <h1 class="comment__title">что обо мне говорят</h1>
+            <h2 class="comment__title">что обо мне говорят</h2>
           </div>
           <ul class="comment__list">
             <li class="comment__item">
               <div class="comment__foto"><img class="comment__img" src="'../../assets/images/dima.jpg" alt="foto"></div>
               <div class="comment__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftShool! 2 месяца только самых тяжелых испытаний и бесконечных ночей!</div>
-              <div class="comment__title">
+              <div class="comment__item-title">
                 <p class="comment__title-name">Ковальчук Дмитрий</p>
                 <p class="comment__title-text">- основатель Loftschool!</p>
               </div>
@@ -128,36 +153,44 @@
             <li class="comment__item">
               <div class="comment__foto"><img class="comment__img" src="../../assets/images/vova.jpg" alt="foto"></div>
               <div class="comment__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</div>
-              <div class="comment__title">
+              <div class="comment__item-title">
                 <p class="comment__title-name">Сабанцев Владимир</p>
                 <p class="comment__title-text">- преподаватель</p>
               </div>
             </li>
           </ul>
         </div>
-        <div class="container form__container">  
+        <div class="form_container">  
           <form class="form" name="form" action="">
-            <h2 class="form__title">связатся со мной</h2>
-            <div class="form__content">
-              <input class="form__name" type="text" id="name" placeholder="Имя">
-              <input class="form__mail" type="text" id="mail" placeholder="Email">
-              <textarea class="form__massage" id="massage" placeholder="Ваше сообшение"></textarea>
-            </div>
-            <div class="form__button">
-              <ul class="form__button-list">
-                <li class="form__button-item">
-                  <button class="form__button-send" id="send" type="submit" value="отправить">Отправить</button>
-                </li>
-                <li class="form__button-item">
-                  <button class="form__button-clear" id="clear" type="reset" value="очистить">Очистить</button>
-                </li>
-              </ul>
+            <div class="form__blur"></div>
+            <div class="form__content-block">
+              <h2 class="form__title">связатся со мной</h2>
+              <div class="form__content">
+                <label class="form__name-label visually-hidden" for="name">Имя</label>
+                <input class="form__name-input" type="text" name="name" id="name" placeholder="Имя">
+                <label class="form__mail-label visually-hidden" for="mail">E-mail</label>
+                <input class="form__mail-input" type="text" name="mail" id="mail" placeholder="Email">
+                <textarea class="form__massage" id="massage" placeholder="Ваше сообшение"></textarea>
+              </div>
+              <div class="form__button">
+                <ul class="form__button-list">
+                  <li class="form__button-item">
+                    <button class="form__button-send" id="send" type="submit" value="отправить">Отправить</button>
+                  </li>
+                  <li class="form__button-item">
+                    <button class="form__button-clear" id="clear" type="reset" value="очистить">Очистить</button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </form>
-          <div class="scroll arrow__up"><a class="scroll__link" href="#">
+          <div class="scroll arrow__up">
+            <button class="scroll__link" type="button">
               <svg class="scroll__icon">
                 <use xlink:href="../../assets/images/sprite.svg#arrow_down"></use>
-              </svg></a></div>
+              </svg>
+            </button>
+          </div>
         </div>
         <footer class="footer">
           <div class="content footer__content">
@@ -171,7 +204,7 @@
                     <li class="nav__item footer__nav-item"><a class="nav__item-link footer__nav-link" href="my-works.html">Мои работы</a></li>
                     <li class="nav__item"><a class="nav__item-link footer__nav-link" href="about.html">Обо мне</a></li>
                     <li class="nav__item"><a class="nav__item-link footer__nav-link" href="blog.html">Блог</a></li>
-                    <li class="nav__item"><a class="nav__item-link footer__nav-link" href="login.html">Авторизация                                                                              </a></li>
+                    <li class="nav__item"><a class="nav__item-link footer__nav-link" href="index.html">Авторизация                                                                              </a></li>
                   </ul>
                 </div>
                 <div class="social footer__socials">
@@ -202,5 +235,7 @@
         </footer>
       </section>
     </div>
+    <script src="../../assets/scripts/bundle.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>

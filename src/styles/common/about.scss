@@ -1,4 +1,4 @@
-.section__about{
+.section_about{
     color: $text;
     flex-direction: row;
     display: flex;
@@ -7,7 +7,7 @@
 
     @include tablet{
 
-       min-height: 200%;
+        height: auto;
 
     }
    
@@ -25,6 +25,10 @@
 
     @include tablet{
         flex-direction: column;
+    }
+
+    @include phone{
+        height: 100%;
     }
     
 }
@@ -148,6 +152,10 @@
         padding-top: 20px;
         box-sizing: border-box;
     }
+}
+
+.about__right-title{
+    text-align: center;
 }
 
 .about__right-container{

@@ -7,42 +7,86 @@ block content
   section.section.intro
       .container.intro__container
         
-        .button.intro__button
-          a.button-link.intro__button-link(href="login.html") Авторизироваться
-        .intro__content
-          .user.user__intro
-            .user__content
-              .user__pic
-                img.user__pic-img(src="../../assets/images/foto.jpg", alt="avatar") 
-              .user__description
-                .user__name Владимир Астахов
-                .user__info Личный сайт разработчика
-            .social.intro__socials
-              ul.social__list
-                li.social__item
-                  a.social__link(href="#")
-                    svg.social__icon.intro__icon
-                      use(xlink:href='../../assets/images/sprite.svg#vk')
-                li.social__item
-                  a.social__link(href="#")
-                    svg.social__icon.intro__icon
-                      use(xlink:href='../../assets/images/sprite.svg#github') 
-                li.social__item
-                  a.social__link(href="#")
-                    svg.social__icon.intro__icon
-                      use(xlink:href='../../assets/images/sprite.svg#in')
-          .nav.intro__nav
-            ul.nav__list
-              -
-                var navs = [
-                  ['my-works.html', 'Мои работы'],
-                  ['about.html', 'Обо мне'],
-                  ['blog.html', 'Блог'],
-                ]
-              each nav in navs
-                li.nav__item.intro__nav-item
-                  a.nav__link.intro__nav-link(href=`${nav[0]}`) #{nav[1]}
+        .button.intro__button(id="button-container")
+          button.button-link.intro__button-link(type='button' id='login') Авторизироваться
+        .flip-container
+          .flipper(id='flipper')
+            .intro__content
+              .user.user__intro
+                .user__content
+                  .user__pic
+                    img.user__pic-img(src="../../assets/images/foto.jpg", alt="avatar") 
+                  .user__description
+                    .user__name Владимир Астахов
+                    .user__info Личный сайт разработчика
+                .social.intro__socials
+                  ul.social__list
+                    li.social__item
+                      a.social__link(href="#")
+                        svg.social__icon.intro__icon
+                          use(xlink:href='../../assets/images/sprite.svg#vk')
+                    li.social__item
+                      a.social__link(href="#")
+                        svg.social__icon.intro__icon
+                          use(xlink:href='../../assets/images/sprite.svg#github') 
+                    li.social__item
+                      a.social__link(href="#")
+                        svg.social__icon.intro__icon
+                          use(xlink:href='../../assets/images/sprite.svg#in')
+              .nav.intro__nav
+                ul.nav__list
+                  -
+                    var navs = [
+                      ['my-works.html', 'Мои работы'],
+                      ['about.html', 'Обо мне'],
+                      ['blog.html', 'Блог'],
+                    ]
+                  each nav in navs
+                    li.nav__item.intro__nav-item
+                      a.nav__link.intro__nav-link(href=`${nav[0]}`) #{nav[1]}
+            
+            form.login__form(action="" )
+              h1.login__form-title авторизируйтесь
+              .login__form-content
+                .login__name
 
+                  label.login__label.visually-hidden(for="login") Логин
+                  input.login__input(type="text" name="login" id="login"  value="Логин") 
+                  span.login__img
+                    svg.title-icon
+                      use(xlink:href='../../assets/images/sprite.svg#login')    
+                            
+                .login__name
+                            
+                  label.login__label.visually-hidden(for="pass") Пароль
+                  input.login__input(type="password" name="pass" id="pass"  value="Пароль") 
+                  span.login__img
+                    svg.title-icon
+                      use(xlink:href='../../assets/images/sprite.svg#password')                            
+                .login__checkbox
+
+                  input.login__checkbox-input.visually-hidden(type="checkbox" name="checkbox" id="checkbox")
+                  label.login__checkbox-label(for="checkbox") Я человек
+                .login__radio
+                  .login__radio-title Вы точно не робот?
+                    ul.login__radio-list    
+                      li.login__radio-item
+                        input.login__radio-input.visually-hidden(type="radio"  name="robot" id="radio1") 
+                        label.login__radio-label(for="radio1") Да
+                      li.login__radio-item
+                        input.login__radio-input.visually-hidden(type="radio"  name="robot" id="radio2") 
+                        label.login__radio-label(for="radio2") Не уверен
+              .nav.login__nav
+                ul.nav__list
+                  -
+                    var navs = [
+                    ['intro', 'На главную'],
+                    ['#', 'Войти'],
+                    ]
+                  each nav in navs
+                    li.nav__item.login__nav-item
+                      button.nav__link.login__nav-link(id=`${nav[0]}`) #{nav[1]}              
+                                
                            
         .copyright.intro__copyright
           p.copyright__text &copy Владимир Астахов | Создано с любовью в LoftSchool | 2016

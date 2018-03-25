@@ -1,15 +1,30 @@
-.section__comment{
-    background-image: url('../../assets/images/background/my-works.jpg');
+.section_comment{
+   // background-image: url('../../assets/images/background/my-works.jpg');
     background-size: cover;
     position: relative;
     height: 200%;
     display: flex;
     flex-direction: column;
-    align-items: spa
+    align-items: center;
+
+    @include tablet{
+        height: auto;
+    }
     
 }
 
-.comment__container{
+.section__background{
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.background-img{
+    height: 100%;
+
+}
+
+.comment_container{
     width: 100%;
     height: 100%;
 }
@@ -21,6 +36,39 @@
     @include phone{
         width: 95%;
     }
+
+}
+
+.comment__title{
+    font-family: 'sansus';
+    font-size: 63px;
+    color: $title;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+
+    &:after{
+       display: block;     
+       margin-top: 32px;
+        content: ' ';
+        @include line(90px, 3px, $title);
+        
+
+    }
+
+    @include tablet{
+        
+         font-size: 50px;
+        
+     }
+ 
+     @include phone{
+         font-size: 40px;
+     }
 
 }
 .comment__list{
@@ -54,17 +102,17 @@
 
 .comment__foto{
     width: 77px;
-    height: 77px;
+    min-height: 77px;
     overflow: hidden;
     border-radius: 50%;
-
+    max-height: 77px;
 }
 
 .comment__img{
    width: 100%
 }
 
-.comment__title{
+.comment__item-title{
     display: flex;
     flex-direction: column;
     align-items: center;

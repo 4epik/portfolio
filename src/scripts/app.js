@@ -1,3 +1,8 @@
-const slider = require('./common/slider');
+require('./common/flip');
 
-slider(); // инициализируем слайдер
+require('./common/hamburger');
+
+require('./common/map');
+
+require('./common/blur');
+

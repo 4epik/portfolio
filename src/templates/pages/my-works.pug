@@ -2,29 +2,14 @@ extends ../template
 
 block variables
     - var title = 'Мои работы'
+   
 
 block content
     section.section.hero
-        .container.container__hero
+        .container.container_hero
             header.header
-                .social.header__socials
-                    ul.social__list
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#vk')
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#github') 
-                        li.social__item
-                            a.social__link(href="")
-                                svg.social__icon.header__icon
-                                    use(xlink:href='../../assets/images/sprite.svg#in') 
-                .hamburger
-                    a.hamburger__link(href='#')
-                        svg.hamburger__icon
-                            use(xlink:href='../../assets/images/sprite.svg#hamburger')
+                include ../common/header_social.pug
+                include ../common/hamburger.pug
             .hero__title
                 .title-img.hero__title-img
                     svg.title-icon.hero__title-icon
@@ -36,11 +21,11 @@ block content
                         .user__name Владимир Астахов
                         .user__info Личный сайт разработчика
             .scroll
-                a.scroll__link(href="#")
+                button.scroll__link(type="button")
                     svg.scroll__icon
                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
 
-    section.section.section__works
+    section.section.section_works
         .triangle-left.works__triangle-left
             
         .triangle-right.works__triangle-right                
@@ -69,56 +54,85 @@ block content
                                 img.slider__item-img(src="../../assets/images/slider/slide1.png", alt="слайд 1")
 
             .works__slider-control
-                    ul.slider__control
-                        li.slider__control-item
-                            .slider__control-down
-                                a.slider__control-pic(href="#")
+                    .slider__control.first
+                        .slider__control-left
+                            ul.slider__control-list
+                                li.slider__control-item.active
+                                    img.slider__control-img(src='./../assets/images/slider/down.jpg')
+                                li.slider__control-item
+                                    img.slider__control-img(src='./../assets/images/slider/slide1.png')
+                                li.slider__control-item
+                                    img.slider__control-img(src='./../assets/images/slider/up.jpg')                                                                                
+                            .slider__controls
+                                a.slider__controls-down(href="#" id="slider")
                                     svg.slider__control-icon
                                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
-                        li.slider__control-item
-                            .slider__control-up
-                                a.slider__control-pic(href="#")
+                    .slider__control.opposite                    
+                        .slider__control-right
+                            ul.slider__control-list
+                                li.slider__control-item.active
+                                    img.slider__control-img(src='./../assets/images/slider/down.jpg')
+                                li.slider__control-item
+                                    img.slider__control-img(src='./../assets/images/slider/slide1.png')
+                                li.slider__control-item
+                                    img.slider__control-img(src='./../assets/images/slider/up.jpg')                                
+                            .slider__controls
+                                a.slider__controls-down(href="#" id="slider")
                                     svg.slider__control-icon
                                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')                                        
 
                         
-    section.section.section__comment
-        .container.comment__container
+    section.section.section_comment
+        .section__background
+            img.background-img(src='../../assets/images/background/my-works.jpg')
+        .container.comment_container
             .comment__title-content
                 .title-img.comment__title-img
                     svg.title-icon
                         use(xlink:href='../../assets/images/sprite.svg#about_header')
-                h1.comment__title что обо мне говорят
+                h2.comment__title что обо мне говорят
             ul.comment__list
                 li.comment__item
                     .comment__foto
                         img.comment__img(src="'../../assets/images/dima.jpg", alt="foto")
                     .comment__text Этот парень проходил обучение веб-разработке не где-то, а в LoftShool! 2 месяца только самых тяжелых испытаний и бесконечных ночей!
-                    .comment__title
+                    .comment__item-title
                         p.comment__title-name Ковальчук Дмитрий
                         p.comment__title-text - основатель Loftschool!
                 li.comment__item
                     .comment__foto
                         img.comment__img(src='../../assets/images/vova.jpg', alt="foto")
                     .comment__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                    .comment__title
+                    .comment__item-title
                         p.comment__title-name Сабанцев Владимир
                         p.comment__title-text - преподаватель
-        .container.form__container   
-            form.form(name="form" action="")
-                h2.form__title связатся со мной
-                .form__content
-                    input.form__name(type="text" id="name" placeholder="Имя")   
-                    input.form__mail(type="text" id="mail" placeholder="Email")
-                    textarea.form__massage(id="massage" placeholder="Ваше сообшение")
-                .form__button
-                    ul.form__button-list
-                        li.form__button-item
-                            button.form__button-send(id="send" type="submit" value="отправить") Отправить
-                        li.form__button-item
-                            button.form__button-clear(id="clear" type="reset" value="очистить") Очистить
+        .form_container   
+          
+            form.form(name="form" action="" )
+                .form__blur
+                    
+                .form__content-block
+                
+
+                    h2.form__title связатся со мной
+                    .form__content
+                        label.form__name-label.visually-hidden(for="name") Имя
+                        input.form__name-input(type="text" name="name" id="name" placeholder="Имя")   
+                        label.form__mail-label.visually-hidden(for="mail") E-mail
+                        input.form__mail-input(type="text" name="mail" id="mail" placeholder="Email")
+                        
+                        textarea.form__massage(id="massage" placeholder="Ваше сообшение")
+                    .form__button
+                        ul.form__button-list
+                            li.form__button-item
+                                button.form__button-send(id="send" type="submit" value="отправить") Отправить
+                            li.form__button-item
+                                button.form__button-clear(id="clear" type="reset" value="очистить") Очистить
             .scroll.arrow__up
-                a.scroll__link(href="#")
+                button.scroll__link(type="button")
                     svg.scroll__icon
                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
         include ../common/footer.pug
+
+
+    
