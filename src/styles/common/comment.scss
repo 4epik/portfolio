@@ -14,18 +14,20 @@
 }
 
 .section__background{
+    width: 100%;
     height: 100%;
     position: absolute;
     z-index: -1;
 }
 
 .background-img{
+    //width: 100%;
     height: 100%;
 
 }
 
 .comment_container{
-    width: 100%;
+   // width: 100%;
     height: 100%;
 }
 
@@ -33,8 +35,14 @@
     position: relative;
     width: 60%;
 
+    @include tablet{
+        
+        padding-top: 30px;
+    }
+
     @include phone{
         width: 95%;
+        padding-top: 30px;
     }
 
 }
