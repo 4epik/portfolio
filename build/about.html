@@ -9,9 +9,17 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://threejs.org/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animation"></div>
+        <div class="preloader__percents">0</div>
+      </div>
+    </div>
     <div class="wrapper">
       <section class="section hero">
         <div class="container container_hero">
@@ -245,6 +253,7 @@
         </div>
       </section>
       <section class="section section_map">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBOkpHPvZFwo1XqG_tJyU-ICQl8mLyY4&amp;callback=initMap" async defer></script>
         <div class="google-map" id="map"></div>
         <div class="container contact__container">
           <div class="contact">
@@ -337,8 +346,7 @@
           </div>
         </footer>
       </section>
+      <script src="./assets/scripts/bundle.js"></script>
     </div>
-    <script src="./assets/scripts/bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>

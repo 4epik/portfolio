@@ -8,10 +8,18 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <link rel="stylesheet" href="./assets/styles/app.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://threejs.org/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animation"></div>
+        <div class="preloader__percents">0</div>
+      </div>
+    </div>
     <div class="wrapper">
       <section class="section login__section">
         <div class="container">
@@ -29,7 +37,7 @@
                 <label class="login__label visually-hidden" for="pass">Пароль</label>
                 <input class="login__input" type="password" name="pass" id="pass" value="Пароль"><span class="login__img">
                   <svg class="title-icon">
-                    <use xlink:href="../../assets/images/sprite.svg#password">                           </use>
+                    <use xlink:href="./assets/images/sprite.svg#password">                           </use>
                   </svg></span>
               </div>
               <div class="login__checkbox">
@@ -62,8 +70,7 @@
           <p class="copyright__text">&copy Владимир Астахов | Создано с любовью в LoftSchool | 2016</p>
         </div>
       </section>
+      <script src="./assets/scripts/bundle.js"></script>
     </div>
-    <script src="../../assets/scripts/bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>
