@@ -4,12 +4,14 @@ var blur = (function () {
 
     return{
         set: function () {
-            var imgWidth = document.querySelector('.section__background').offsetWidth;
+            var imgWidth = document.querySelector('.section_comment').offsetWidth;
+            var imgHeight = document.querySelector('.section_comment').offsetHeight;
             var posLeft = -wrapper.offsetLeft;
             var posTop = -wrapper.offsetTop;
             var blurCSS = form.style;
 
-            blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
+            blurCSS.backgroundSize = imgWidth + 'px' + ' ' + imgHeight + 'px';
+             
             blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
         }
     }

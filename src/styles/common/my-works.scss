@@ -42,7 +42,7 @@
 .header__icon{
     fill: $white;
 
-    &:hover{
+    &:hover, :focus, :active{
         fill: $green;
     }
 }
@@ -103,31 +103,7 @@
 
 }
 
-.wirks__left-title{
 
-    @include tablet{
-        font-size: 30px;
-        
-
-        &:before{
-            margin-top: 18px;
-        }
-    }
-}
-
-.works__left-text{
-    color: $green;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-top: 27px;
-
-
-    @include tablet{
-        margin-top: 18px;
-
-    }
-
-}
 
 .works__button{
     background-color: $button;

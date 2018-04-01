@@ -9,9 +9,17 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://threejs.org/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animation"></div>
+        <div class="preloader__percents">0</div>
+      </div>
+    </div>
     <div class="wrapper">
       <section class="section hero">
         <div class="container container_hero">
@@ -83,8 +91,22 @@
         <div class="works__container">
           <div class="works__content">
             <div class="works__left-content">
-              <h2 class="works__left-title">Сайт школы онлайн образования</h2>
-              <div class="works__left-text">html, CSS, javascript</div>
+              <div class="left__slider">
+                <ul class="left__slider-list">
+                  <li class="left__slider-item active">
+                    <h2 class="left__slider-title">Сайт школы онлайн образования</h2>
+                    <div class="left__slider-text">html, CSS, javascript</div>
+                  </li>
+                  <li class="left__slider-item">
+                    <h2 class="left__slider-title">Дизайн интерьеров</h2>
+                    <div class="left__slider-text">html, CSS, javascript</div>
+                  </li>
+                  <li class="left__slider-item">
+                    <h2 class="left__slider-title">Йога</h2>
+                    <div class="left__slider-text">html, CSS</div>
+                  </li>
+                </ul>
+              </div>
               <div class="button works__button"><a class="button__link works__button-link" href=""><span class="works__button-img">
                     <svg class="works__button-icon">
                       <use xlink:href="../../assets/images/sprite.svg#link"></use>
@@ -94,9 +116,9 @@
           <div class="works__slider">
             <div class="slider">
               <ul class="slider__list"> 
-                <li class="slider__item">
-                  <div class="slider__item-content"><img class="slider__item-img" src="../../assets/images/slider/slide1.png" alt="слайд 1"></div>
-                </li>
+                <li class="slider__item active"><img class="slider__item-img" src="../../assets/images/slider/slide1.png" alt="слайд 1"></li>
+                <li class="slider__item"><img class="slider__item-img" src="./../assets/images/slider/up.jpg" alt="слайд 2"></li>
+                <li class="slider__item"><img class="slider__item-img" src="./../assets/images/slider/down.jpg" alt="слайд 3"></li>
               </ul>
             </div>
           </div>
@@ -108,7 +130,7 @@
                   <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/slide1.png"></li>
                   <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/up.jpg"></li>
                 </ul>
-                <div class="slider__controls"><a class="slider__controls-down" href="#" id="slider">
+                <div class="slider__controls"><a class="slider__controls-down" href="#" id="sliderdown">
                     <svg class="slider__control-icon">
                       <use xlink:href="../../assets/images/sprite.svg#arrow_down"></use>
                     </svg></a></div>
@@ -117,11 +139,11 @@
             <div class="slider__control opposite">                   
               <div class="slider__control-right">
                 <ul class="slider__control-list">
-                  <li class="slider__control-item active"><img class="slider__control-img" src="./../assets/images/slider/down.jpg"></li>
+                  <li class="slider__control-item active"><img class="slider__control-img" src="./../assets/images/slider/up.jpg"></li>
+                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/down.jpg"></li>
                   <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/slide1.png"></li>
-                  <li class="slider__control-item"><img class="slider__control-img" src="./../assets/images/slider/up.jpg"></li>
                 </ul>
-                <div class="slider__controls"><a class="slider__controls-down" href="#" id="slider">
+                <div class="slider__controls"><a class="slider__controls-down" href="#" id="sliderup">
                     <svg class="slider__control-icon">
                       <use xlink:href="../../assets/images/sprite.svg#arrow_down">                                       </use>
                     </svg></a></div>
@@ -131,7 +153,6 @@
         </div>
       </section>
       <section class="section section_comment">
-        <div class="section__background"><img class="background-img" src="../../assets/images/background/my-works.jpg"></div>
         <div class="container comment_container">
           <div class="comment__title-content">
             <div class="title-img comment__title-img">
@@ -161,7 +182,7 @@
           </ul>
         </div>
         <div class="form_container">  
-          <form class="form" name="form" action="">
+          <form class="form" name="form" action="" id="form">
             <div class="form__blur"></div>
             <div class="form__content-block">
               <h2 class="form__title">связатся со мной</h2>
@@ -234,8 +255,7 @@
           </div>
         </footer>
       </section>
+      <script src="../../assets/scripts/bundle.js"></script>
     </div>
-    <script src="../../assets/scripts/bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>

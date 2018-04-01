@@ -113,8 +113,9 @@ block content
                                                         circle.skill__circle-first(r="45" cx="50%" cy="50%" fill="none")
                                                         circle(class='skill__circle-second '+`${circle[1]}` r="45" cx="50%" cy="50%" fill="none" transform="rotate(-90 55 55)")
     section.section.section_map
+        script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBOkpHPvZFwo1XqG_tJyU-ICQl8mLyY4&callback=initMap" async defer)
         .google-map(id='map')
-           
+          
         .container.contact__container
             .contact
                 .contact__title

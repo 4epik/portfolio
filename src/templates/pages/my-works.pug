@@ -38,8 +38,17 @@ block content
             .works__content
                 
                 .works__left-content
-                    h2.works__left-title Сайт школы онлайн образования
-                    .works__left-text html, CSS, javascript
+                    .left__slider
+                        ul.left__slider-list
+                            li.left__slider-item.active
+                                h2.left__slider-title Сайт школы онлайн образования
+                                .left__slider-text html, CSS, javascript
+                            li.left__slider-item
+                                h2.left__slider-title Дизайн интерьеров
+                                .left__slider-text html, CSS, javascript
+                            li.left__slider-item
+                                h2.left__slider-title Йога
+                                .left__slider-text html, CSS
                     .button.works__button
                         a.button__link.works__button-link(href="")
                             span.works__button-img
@@ -49,9 +58,12 @@ block content
             .works__slider
                 .slider
                     ul.slider__list  
+                        li.slider__item.active
+                            img.slider__item-img(src='../../assets/images/slider/slide1.png', alt="слайд 1")
                         li.slider__item
-                            .slider__item-content
-                                img.slider__item-img(src="../../assets/images/slider/slide1.png", alt="слайд 1")
+                            img.slider__item-img(src="./../assets/images/slider/up.jpg", alt="слайд 2")
+                        li.slider__item
+                            img.slider__item-img(src='./../assets/images/slider/down.jpg', alt="слайд 3")
 
             .works__slider-control
                     .slider__control.first
@@ -64,27 +76,26 @@ block content
                                 li.slider__control-item
                                     img.slider__control-img(src='./../assets/images/slider/up.jpg')                                                                                
                             .slider__controls
-                                a.slider__controls-down(href="#" id="slider")
+                                a.slider__controls-down(href="#" id="sliderdown")
                                     svg.slider__control-icon
                                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')
                     .slider__control.opposite                    
                         .slider__control-right
                             ul.slider__control-list
                                 li.slider__control-item.active
+                                    img.slider__control-img(src='./../assets/images/slider/up.jpg')
+                                li.slider__control-item
                                     img.slider__control-img(src='./../assets/images/slider/down.jpg')
                                 li.slider__control-item
-                                    img.slider__control-img(src='./../assets/images/slider/slide1.png')
-                                li.slider__control-item
-                                    img.slider__control-img(src='./../assets/images/slider/up.jpg')                                
+                                    img.slider__control-img(src='./../assets/images/slider/slide1.png')                                
                             .slider__controls
-                                a.slider__controls-down(href="#" id="slider")
+                                a.slider__controls-down(href="#" id="sliderup")
                                     svg.slider__control-icon
                                         use(xlink:href='../../assets/images/sprite.svg#arrow_down')                                        
 
                         
     section.section.section_comment
-        .section__background
-            img.background-img(src='../../assets/images/background/my-works.jpg')
+        
         .container.comment_container
             .comment__title-content
                 .title-img.comment__title-img
@@ -108,7 +119,7 @@ block content
                         p.comment__title-text - преподаватель
         .form_container   
           
-            form.form(name="form" action="" )
+            form.form(name="form" action="" id="form" )
                 .form__blur
                     
                 .form__content-block

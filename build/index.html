@@ -9,9 +9,17 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://threejs.org/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animation"></div>
+        <div class="preloader__percents">0</div>
+      </div>
+    </div>
     <div class="wrapper">
       <section class="section intro">
         <div class="container intro__container">
@@ -57,25 +65,31 @@
               <form class="login__form" action="">
                 <h1 class="login__form-title">авторизируйтесь</h1>
                 <div class="login__form-content">
-                  <div class="login__name">
-                    <label class="login__label visually-hidden" for="login">Логин</label>
-                    <input class="login__input" type="text" name="login" id="login" value="Логин"><span class="login__img">
-                      <svg class="title-icon">
-                        <use xlink:href="../../assets/images/sprite.svg#login">   </use>
-                      </svg></span>
+                  <div class="name">
+                    <div class="login__name">
+                      <label class="login__label visually-hidden" for="login">Логин</label>
+                      <input class="login__input field" type="text" name="login" id="login"><span class="login__img">
+                        <svg class="title-icon">
+                          <use xlink:href="../../assets/images/sprite.svg#login">   </use>
+                        </svg></span>
+                    </div>
+                    <div class="error">Введите логин</div>
                   </div>
-                  <div class="login__name">
-                    <label class="login__label visually-hidden" for="pass">Пароль</label>
-                    <input class="login__input" type="password" name="pass" id="pass" value="Пароль"><span class="login__img">
-                      <svg class="title-icon">
-                        <use xlink:href="../../assets/images/sprite.svg#password">                           </use>
-                      </svg></span>
+                  <div class="pass">
+                    <div class="login__name">
+                      <label class="login__label visually-hidden" for="pass">Пароль</label>
+                      <input class="login__input field" type="password" name="pass" id="pass"><span class="login__img">
+                        <svg class="title-icon">
+                          <use xlink:href="../../assets/images/sprite.svg#password"> </use>
+                        </svg></span>
+                    </div>
+                    <div class="error">Введите пароль</div>
                   </div>
-                  <div class="login__checkbox">
+                  <div class="login__checkbox check">
                     <input class="login__checkbox-input visually-hidden" type="checkbox" name="checkbox" id="checkbox">
                     <label class="login__checkbox-label" for="checkbox">Я человек</label>
                   </div>
-                  <div class="login__radio">
+                  <div class="login__radio radio">
                     <div class="login__radio-title">Вы точно не робот?
                       <ul class="login__radio-list">   
                         <li class="login__radio-item">
@@ -93,10 +107,10 @@
                 <div class="nav login__nav">
                   <ul class="nav__list">
                     <li class="nav__item login__nav-item">
-                      <button class="nav__link login__nav-link" id="intro">На главную              </button>
+                      <button class="nav__link login__nav-link" id="intro" type="submit">На главную              </button>
                     </li>
                     <li class="nav__item login__nav-item">
-                      <button class="nav__link login__nav-link" id="#">Войти              </button>
+                      <button class="nav__link login__nav-link" id="loginbtn" type="submit">Войти              </button>
                     </li>
                   </ul>
                 </div>
@@ -108,8 +122,7 @@
           </div>
         </div>
       </section>
+      <script src="../../assets/scripts/bundle.js"></script>
     </div>
-    <script src="../../assets/scripts/bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>
