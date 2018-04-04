@@ -1,19 +1,21 @@
+const loginForm = (function(){
+
 var form = document.querySelector('.login__form')
 var validateBtn = form.querySelector('#loginbtn')
 var from = form.querySelector('#login')
 var password = form.querySelector('#pass')
 //var checked = form.querySelector('.checkbox')
 //var radio = form.querySelectorAll('.login__radio-input')
-var fields = form.querySelectorAll('.field')
+var fields = form.querySelector('.field')
 
 form.addEventListener('submit', function (event) {
     event.preventDefault()
 
-    var loginName = form.querySelectorAll('.login__name')
+    var loginName = form.querySelector('.login__name')
 
-    var icon = loginName.querySelectorAll('.login__img')
+    var icon = loginName.querySelector('.login__img')
 
-    var errors = form.querySelectorAll('.error')
+    var errors = form.querySelector('.error')
 
     for (var i = 0; i < errors.length; i++) {
         $(errors[i]).removeClass('active')
@@ -37,4 +39,17 @@ form.addEventListener('submit', function (event) {
             $(icon[i]).addClass('icon-active')
           }
     }
-  })
+  });
+  
+  return{
+    init: function (){
+      form();
+    }
+  }
+
+  
+
+}());
+
+
+module.exports = loginForm;

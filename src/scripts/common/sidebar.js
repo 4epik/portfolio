@@ -1,4 +1,7 @@
 
+
+ 
+
 var sidebarContainer = document.querySelector('.content__left');
 var texts = document.querySelectorAll('.blog__item');
 var links = document.querySelectorAll('.sidebar__item');
@@ -39,3 +42,4 @@ $('#sidebar').on('click', function(e) {
     }
     
 });
+

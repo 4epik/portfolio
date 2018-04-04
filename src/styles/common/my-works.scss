@@ -48,7 +48,7 @@
 }
 
 
-.section_works{
+.works{
     position: relative;
     flex-direction: column;
 
@@ -88,6 +88,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px 0px 15px 0px;
+    box-sizing: border-box;
 }
 
 .works__left-content{
@@ -122,7 +124,7 @@
      }
 
     @include tablet{
-        margin-top: 35px;
+        margin-top: 20px;
     }
 }
 

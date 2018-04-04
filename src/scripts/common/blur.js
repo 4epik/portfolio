@@ -18,8 +18,8 @@ var blur = (function () {
 }());
 
 
-blur.set();
 
-window.onresize = function () {
-    blur.set();
-}
+
+
+
+module.exports = blur;

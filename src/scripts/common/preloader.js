@@ -1,3 +1,5 @@
+const preloaderOne = (function(){
+
 let percentsTotal = 0;
 const preloader = $('.preloader');
 
@@ -44,7 +46,13 @@ const loadImages = (images) => {
 }
 
 const imgs = imgPaths.toArray();
+return {
+  init: function(){
+    loadImages(imgs);
+  },
+};
 
-export default () => {
-  loadImages(imgs);
-}
+
+}());
+
+module.exports = preloaderOne;
