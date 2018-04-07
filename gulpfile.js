@@ -119,6 +119,22 @@ function scripts() {
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
+// сервер node.js
+gulp.task("nodemon", done => {
+    let started = false;
+    $gp
+      .nodemon({
+        script: "server.js",
+        env: { NODE_ENV: "development" },
+        watch: "server.js"
+      })
+      .on("start", () => {
+        if (started) return;
+        done();
+        started = true;
+      });
+  });
+
 // галповский вотчер
 function watch() {
     gulp.watch(paths.styles.src, styles);

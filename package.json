@@ -4,7 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "build": "gulp build && cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "keywords": [],
   "author": "Uhakova Natalya",
@@ -36,10 +39,35 @@
     "gulp-svg-sprites": "^4.1.2",
     "gulp-svgmin": "^1.2.4",
     "gulp-webpack": "^1.5.0",
+    "nodemon": "^1.17.3",
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
+    "vue-template-compiler": "2.5.13",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
     "webpack": "^4.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jade": "^1.11.0",
+    "mongoose": "^5.0.12",
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.1",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.0",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.4",
+    "normalize.css": "^7.0.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "request": "^2.85.0",
+    "vue": "2.5.13",
+    "vue-axios": "^2.1.1",
+    "vue-loader": "^14.2.2"
+  }
 }

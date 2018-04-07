@@ -11,7 +11,7 @@ const slider = require('./common/slider');
 const water = require('./common/water');
 
 
-const preloader = require('./common/preloader');
+//const preloader = require('./common/preloader');
 
 const blured = require('./common/blur');
 //const login = require('./common/login');
@@ -27,7 +27,7 @@ if(document.getElementsByClassName('google-map').length){
 
 
     
-   preloader.init();
+ //  preloader.init();
 
 //water
 
@@ -35,22 +35,26 @@ var container = document.getElementById('webgl');
 var widthContainer = container.offsetWidth;
 var mobile = false;
 
-
+if(!mobile) { 
+    container.style.display = 'block';
+    water.init();
+    };
 
 window.onresize = function () {
     widthContainer = container.offsetWidth;
-    console.log(widthContainer);
+    
+
     if(  widthContainer < 769 ) {
       mobile = true;
       container.style.display = 'none';
      
     }
-    
-    else ( widthContainer > 769 ) {
+    if(!mobile) { 
         container.style.display = 'block';
-      water.init();
-     
-    } ;
+        water.init();
+        };
+    
+    
   };
 
 

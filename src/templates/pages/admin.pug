@@ -1,0 +1,103 @@
+extends ../template
+
+block variables
+    - var title = 'admin'
+
+block content
+    section.section.admin
+        header.header__admin
+            h1.header__title Панель администрирования
+            a.header__link Вернуться на сайт
+        .tab
+            ul.tab__list
+
+                //TAB1
+                li.tab__item
+                    input.tab__input.visually-hidden(type="radio" name="tab" id="tab-1" checked )
+                    label.tab__label(for="tab-1") Tab 1
+                    .tab__content-background
+                    .tab__content
+                            
+                        h2.tab__content-title Страница "Обо мне"
+                        form.tab__content-form(action=" " method="post")
+                            ul.tab__content-list
+                            
+                                li.tab__content-item
+                                    h3.tab__content-subtitle Frontend
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Html
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Сss
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Java Script
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %                                                                        
+
+                                li.tab__content-item
+                                    h3.tab__content-subtitle Backend
+                                    .tab__content-block
+                                        label.tab__content-label(for="") PHP
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Node.js
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Mongo.db
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %    
+
+                                li.tab__content-item
+                                    h3.tab__content-subtitle Workflow
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Git
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Gulp
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %
+                                    .tab__content-block
+                                        label.tab__content-label(for="") Bower
+                                        input.tab__content-input(type="text" name=""  placeholder="50" required)
+                                        span.tab__content-text %  
+
+                            button.tab__content-button(type="submit") Сохранить
+
+                // TAB 2
+
+                li.tab__item
+                    input.tab__input.visually-hidden(type="radio" name="tab" id="tab-2" )
+                    label.tab__label(for="tab-2") Tab 2
+                    .tab__content
+                        h2.tab__content-title Страница "Блог"
+                        form.tab__content-form(action=" " method="post")
+                            h3.tab__content-subtitle Добавить запись
+                            label.tab__content-label.visually-hidden(for="blog-title") Название
+                            input.tab__content-input.tab__content-blog(type="text" name="blog-title" placeholder="Название" required)
+                            label.tab__content-label.visually-hidden(for="blog-data") Дата
+                            input.tab__content-input.tab__content-blog(type="text" name="blog-data" placeholder="Дата" required)
+                            label.tab__content-label.visually-hidden(for="blog-text") Содержание
+                            textarea.tab__content-textarea(name="blog-text" placeholder="Содержание" required)
+                            button.tab__content-button(type="submit") Добавить
+                
+                // TAB 3
+
+                li.tab__item
+                    input.tab__input.visually-hidden(type="radio" name="tab" id="tab-3" )
+                    label.tab__label(for="tab-3") Tab 3
+                    .tab__content 
+                        h2.tab__content-title Страница "Мои работы"  
+                        form.tab__content-form(action=" " method="post")
+                            h3.tab__content-subtitle Добавить запись
+                            label.tab__content-label.visually-hidden(for="work-title") Название проекта
+                            input.tab__content-input.tab__content-blog(type="text" name="work-title" placeholder="Название проекта" required)
+                            label.tab__content-label.visually-hidden(for="work-tehnology") Название проекта
+                            input.tab__content-input.tab__content-blog(type="text" name="work-tehnology" placeholder="Технологии" required)
+                            button.tab__content-btns(type="button") Загрузить картинку       
+                            button.tab__content-button(type="submit") Добавить             
