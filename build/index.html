@@ -9,11 +9,12 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <!--include ./common/preloader.pug-->
     <div class="wrapper">
       <section class="section intro">
+        <div class="intro__webgl" id="webgl"></div>
         <div class="container intro__container">
           <div class="button intro__button" id="button-container">
             <button class="button-link intro__button-link" type="button" id="login">Авторизироваться</button>
@@ -57,25 +58,31 @@
               <form class="login__form" action="">
                 <h1 class="login__form-title">авторизируйтесь</h1>
                 <div class="login__form-content">
-                  <div class="login__name">
-                    <label class="login__label visually-hidden" for="login">Логин</label>
-                    <input class="login__input" type="text" name="login" id="login" value="Логин"><span class="login__img">
-                      <svg class="title-icon">
-                        <use xlink:href="../../assets/images/sprite.svg#login">   </use>
-                      </svg></span>
+                  <div class="name">
+                    <div class="login__name">
+                      <label class="login__label visually-hidden" for="login">Логин</label>
+                      <input class="login__input field" type="text" name="login" id="login"><span class="login__img">
+                        <svg class="title-icon">
+                          <use xlink:href="../../assets/images/sprite.svg#login">   </use>
+                        </svg></span>
+                    </div>
+                    <div class="error">Введите логин</div>
                   </div>
-                  <div class="login__name">
-                    <label class="login__label visually-hidden" for="pass">Пароль</label>
-                    <input class="login__input" type="password" name="pass" id="pass" value="Пароль"><span class="login__img">
-                      <svg class="title-icon">
-                        <use xlink:href="../../assets/images/sprite.svg#password">                           </use>
-                      </svg></span>
+                  <div class="pass">
+                    <div class="login__name">
+                      <label class="login__label visually-hidden" for="pass">Пароль</label>
+                      <input class="login__input field" type="password" name="pass" id="pass"><span class="login__img">
+                        <svg class="title-icon">
+                          <use xlink:href="../../assets/images/sprite.svg#password"> </use>
+                        </svg></span>
+                    </div>
+                    <div class="error">Введите пароль</div>
                   </div>
-                  <div class="login__checkbox">
+                  <div class="login__checkbox check">
                     <input class="login__checkbox-input visually-hidden" type="checkbox" name="checkbox" id="checkbox">
                     <label class="login__checkbox-label" for="checkbox">Я человек</label>
                   </div>
-                  <div class="login__radio">
+                  <div class="login__radio radio">
                     <div class="login__radio-title">Вы точно не робот?
                       <ul class="login__radio-list">   
                         <li class="login__radio-item">
@@ -93,10 +100,10 @@
                 <div class="nav login__nav">
                   <ul class="nav__list">
                     <li class="nav__item login__nav-item">
-                      <button class="nav__link login__nav-link" id="intro">На главную              </button>
+                      <button class="nav__link login__nav-link" id="intro" type="submit">На главную              </button>
                     </li>
                     <li class="nav__item login__nav-item">
-                      <button class="nav__link login__nav-link" id="#">Войти              </button>
+                      <button class="nav__link login__nav-link" id="loginbtn" type="submit">Войти              </button>
                     </li>
                   </ul>
                 </div>
@@ -109,7 +116,95 @@
         </div>
       </section>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+    <script src="//threejs.org/build/three.min.js"></script>
+    <!--script(src="./assets/scripts/js/three.min.js")-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--script 
+    .
+        window.jQuery || document.write(<script src="./assets/libs/js/jquery.min.js"></script>)        
+    
+    
+    -->
+    <script id="vertexShader" type="x-shader/x-vertex">
+      varying vec2 v_position;
+      uniform vec2 u_size;
+      uniform vec2 u_resolution;
+      attribute vec2 a_pos;
+      
+      
+      void main() {
+              v_position = (position.xy+1.0)*0.5;
+              gl_Position =  vec4(position, 1.0);            
+      }
+      
+    </script>
+    <script id="fragmentShader" type="x-shaider/x-fragment">
+      uniform float u_time;
+      varying vec2 v_position;
+      uniform sampler2D u_image;
+      uniform sampler2D u_maps;
+      uniform vec2 u_mouse;
+      uniform float u_dpi;
+      uniform vec2 u_resolution;
+      
+      
+      vec2 pos(){
+          return vec2(0.0,0.0);
+      }
+      
+      vec4 blend(vec4 bg,vec4 fg){
+          vec3 bgm=bg.rgb*bg.a;
+          vec3 fgm=fg.rgb*fg.a;
+          float ia=1.0-fg.a;
+          float a=(fg.a + bg.a * ia);
+          vec3 rgb;
+          if(a!=0.0){
+              rgb=(fgm + bgm * ia) / a;
+          }else{
+              rgb=vec3(0.0,0.0,0.0);
+          }
+          return vec4(rgb,a);
+          }
+      vec2 pixel(){
+          return vec2(1.0*1.0)/u_resolution;
+      }
+      float wave(float x,float freq, float speed){
+          return sin(x*freq+((u_time*(3.1415/2.0))*speed));
+      }
+      vec2 waves(vec2 pos){
+          vec4 maps=texture2D(u_maps,pos);
+          float mask=maps.r;
+          float y=maps.g;
+          float y2=pow(y,2.0);
+      
+          vec2 intensity=vec2(
+              0.5-(y2*0.5),
+              0.2+(y2*1.8))*pixel();
+      
+          vec2 waves=vec2(
+              wave(y,400.0-(y2*200.0),-0.03), 
+              wave(y,400.0-(y2*400.0*0.05),-0.045)
+              +wave(y,900.0-(y2*900.0*0.05),-0.05)
+              +wave(pos.x,20.0+(y2*20.0*1.5),-0.01)
+          );
+          return pos+(waves*intensity*mask);
+      }
+      vec2 depth(vec2 pos){
+          vec2 intensity=vec2(0.01,0.01);
+          float d=0.05-pow(texture2D(u_maps,pos).b,1.0);
+          return pos+(intensity*u_mouse*d);
+      }
+      
+      void main(){
+          vec2 pos=v_position.xy;    
+          vec2 turbulence=depth(waves(pos));
+          vec2 noTurbulence=depth(pos);
+          vec4 c=texture2D(u_image,turbulence);
+      
+          gl_FragColor=vec4(c.rgb,1.0);
+      }
+    </script>
     <script src="../../assets/scripts/bundle.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqG0O3yc6eTTmzvS1Or_LKDRX633UYrOQ"></script>
   </body>
 </html>

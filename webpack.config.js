@@ -5,6 +5,7 @@ const config = {
     output: {
         filename: 'bundle.js'
     },
+    devtool: "sourse-map",
     plugins: [
         new UglifyJSPlugin({
             sourceMap: true

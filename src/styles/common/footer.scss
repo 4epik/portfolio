@@ -131,7 +131,7 @@
 }
 
 
-.footer__left-content{
+.left{
     @include tablet{
         grid-column-start: 1; 
         grid-column-end: 2; 
@@ -148,7 +148,7 @@
 
 }
 
-.footer__center-content{
+.center{
     @include tablet{
         grid-column-start: 2; 
         grid-column-end: 3; 
@@ -166,7 +166,7 @@
 
 }
 
-.footer__right-content{
+.right{
     @include tablet{
         grid-column-start: 1; 
         grid-column-end: 3; 

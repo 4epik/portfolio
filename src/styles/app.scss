@@ -14,11 +14,14 @@ $tablet: 768px;
 
 $phone: 480px;
 
-$phone_mini: 384px;
+$phone-mini: 320px;
+
+//$phone_mini: 384px;
 
 html{
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 body{
    height: 100%;
@@ -48,7 +51,7 @@ body{
 .section {
     width: 100%;
     height: 100%;
-
+    min-height: fit-content;
     min-height: 650px;
     display: flex;
     //align-items: center;
@@ -89,7 +92,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 100;
+    z-index: 2;
 
     &:after{
        display: block;     
@@ -189,7 +192,7 @@ button{
  
 
 
-
+@import 'common/preloader';
 @import 'common/button';
 @import 'common/hamburger';
 @import 'common/copyright';
@@ -203,6 +206,7 @@ button{
 @import 'common/slider';
 @import 'common/user';
 @import 'common/map';
+@import 'common/admin';
 
 
 

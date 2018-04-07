@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 0;
     padding-bottom: 70px;
-    z-index: 5;
+    z-index: 3;
 
 }
 
@@ -27,7 +27,7 @@
     height: 100%;
     fill: $white;
 
-    &:hover, :focus{
+    &:hover, :focus, :active{
         fill: $green;
     }
 }

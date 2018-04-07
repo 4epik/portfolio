@@ -1,4 +1,4 @@
-.section_about{
+.about{
     color: $text;
     flex-direction: row;
     display: flex;
@@ -42,7 +42,7 @@
 .about__left{
     background-color: $left-container;
     width: 50%;
-    //height: 100%;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,6 +52,7 @@
 
     @include tablet{
         width: 100%;
+        height: 100%;
     }
 
     @include phone{
@@ -63,6 +64,7 @@
     display: flex;
     flex-direction: row;
     align-items: end;
+    height: 100%;
 
     @include desk{
         display: flex;
@@ -140,7 +142,7 @@
     background-color: $about-right;
     width: 50%;
     height: 100%;
-    //display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -152,6 +154,7 @@
     @include tablet{
         width: 100%;
         text-align: center;
+        min-height: fit-content;
     }
 
 
@@ -164,6 +167,10 @@
 
 .about__right-title{
     text-align: center;
+
+    @include tablet{
+        margin-top: 30px;
+    }
 }
 
 .about__right-container{
@@ -220,6 +227,12 @@
 .skills__row-item{
     position: relative;
     margin-right: 37px;
+    margin-top: 10px;
+
+    @include tablet{
+        margin-right: 18px;
+        margin-left: 18px;
+    }
 
     @include phone{
         margin-right: 15px;

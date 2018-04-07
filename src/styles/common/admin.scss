@@ -1,0 +1,282 @@
+.admin{
+    height: 100%; 
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+
+}
+
+.header__admin{
+    font-family: 'roboto';
+   
+    display: flex;
+    height: 15%;
+    background-color: $button;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+
+    @include phone{
+        flex-direction: column-reverse;
+    }
+}
+
+.header__title{
+    font-size: 28px;
+    color: white;
+    text-transform: unset; 
+    font-weight: 700;
+
+    &:after{
+        display: none; 
+    }
+
+    @include phone{
+        font-size: 18px;
+    }
+}
+
+.header__link{
+    color: white;
+    font-size: 16px;
+}
+
+.tab{
+    width: 100%;
+    height: 85%;
+}
+
+.tab__list {
+    width: 100%;
+    height: 100%;
+	background-color: $tab;
+	padding: 0;
+	margin: 0;
+    position: relative;
+    
+    @include phone{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.tab__list:after {
+	content: "";
+	clear: both;
+	display: block;
+	height: 240px;
+}
+.tab__item {
+    float: left;
+
+    @include phone{
+        width: 100%;
+    }
+    
+}
+
+.tab__item .tab__label{
+	display: inline-block;
+	border: 2px solid $tab-active;
+	border-right-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+	height: 30px;
+	line-height: 30px;
+	padding: 5px 20px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    user-select: none;
+    
+    @include phone{
+        width: 100%;
+        padding-left: 0;
+    }
+}
+.tab__item:last-child .tab__label {
+	border-right-width: 2px;
+}
+.tab__list .tab__content {
+    height: 100%;
+	display: none;
+	position: absolute;
+	left: 0;
+    //padding: 20px;
+    text-align: left;
+	//border: 1px solid #999;
+	//height: 200px;
+    overflow-y: auto;
+    
+    @include phone{
+        top: 22%;
+       
+    }
+}
+
+.tab__content-background{
+    background: url('../../assets/images/background/forest.jpg') 0 0 no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    //z-index: -1;
+    height: 100%;
+
+    @include phone{
+        top: 22%;
+    }
+}
+
+/* Функциональность: */
+
+.tab__list li > input:checked + label {
+	background-color: $tab-active;
+}
+.tab__list li > input:checked ~ .tab__content {
+    display: block;
+    text-align: left;
+
+    @include phone{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+// TAB 1
+
+.tab__content{
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.tab__content-title{
+    z-index: 1;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 50px;
+    width: fit-content;
+
+    &:after{
+        display: none;
+    }
+
+}
+
+
+
+.tab__content-form{
+    height: 100%;
+    width: 100%;
+    color: $admin;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tab__content-list{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+
+.tab__content-item{
+    text-align: right;
+    color: $admin;
+    margin-top: 30px;
+    margin-left: 36px;
+    margin-right: 36px;
+}
+
+
+.tab__content-subtitle{
+    text-align: left;
+    
+    font-size: 16px;
+}
+
+.tab__content-block{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.tab__content-input{
+    width: 46px;
+    height: 32px;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.tab__content-label{
+    width: 100%;
+    text-align: left;
+}
+
+.tab__content-text{
+    margin-left: 10px;
+}
+
+.tab__content-button{
+    display: block;
+    width: 119px;
+    height: 45px;
+    background-color: $button;
+    border-radius: 5px;
+    margin-top: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+// TAB 2
+ .tab__content-blog{
+     width: 300px;
+     height: 45px;
+     text-align: left;  
+     padding-left: 10px;
+     margin-top: 20px;
+     margin-left: 0;
+
+     @include phone{
+        width: 90%;
+     }
+ }
+
+ .tab__content-textarea{
+     width: 500px;
+     height: 165px;
+     margin-top: 20px;
+     padding-left: 10px;
+     padding-top: 10px;
+     resize: none;
+     border-radius: 5px;
+
+     @include phone{
+        width: 90%;
+     }
+ }
+
+ // TAB 3
+
+ .tab__content-btns{
+     color: $button;
+     display: block;
+     width: fit-content;
+     margin-top: 20px;
+
+     &:before{
+         content: " ";
+         background-image: url('../../assets/images/svg/image.svg');
+         width: 35px;
+         height: 35px;
+     }
+ }
+
+

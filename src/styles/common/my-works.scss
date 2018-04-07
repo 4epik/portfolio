@@ -42,13 +42,13 @@
 .header__icon{
     fill: $white;
 
-    &:hover{
+    &:hover, :focus, :active{
         fill: $green;
     }
 }
 
 
-.section_works{
+.works{
     position: relative;
     flex-direction: column;
 
@@ -88,6 +88,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px 0px 15px 0px;
+    box-sizing: border-box;
 }
 
 .works__left-content{
@@ -103,31 +105,7 @@
 
 }
 
-.wirks__left-title{
 
-    @include tablet{
-        font-size: 30px;
-        
-
-        &:before{
-            margin-top: 18px;
-        }
-    }
-}
-
-.works__left-text{
-    color: $green;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-top: 27px;
-
-
-    @include tablet{
-        margin-top: 18px;
-
-    }
-
-}
 
 .works__button{
     background-color: $button;
@@ -146,7 +124,7 @@
      }
 
     @include tablet{
-        margin-top: 35px;
+        margin-top: 20px;
     }
 }
 
